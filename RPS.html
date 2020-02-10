@@ -44,31 +44,60 @@
                 }
             }
             
-            if (getCompChoice() == 0) {
-                        para.textContent = "Computer threw Rock! 
-                    }
-                    else if (getCompChoice() == 1) {
-                        para.textContent = "Computer threw Scissors! Congratulations, you win!"
-                    }
-                    else {
-                        para.textContent = "Computer threw Paper! 
-                    }
-                
+            function pRock() {
+                if (getCompChoice() == 0) {
+                    para.textContent = cpRock + " " + pTie
+                }
+                else if (getCompChoice() == 1) {
+                    para.textContent = cpScissors + " " + pWin
+                }
+                else {
+                    para.textContent = cpPaper + " " + pLose
+                }
+            }
+            
+            function pPaper() {
+                if (getCompChoice() == 0) {
+                    para.textContent = cpRock + " " + pWin
+                }
+                else if (getCompChoice() == 1) {
+                    para.textContent = cpScissors + " " + pLose
+                }
+                else {
+                    para.textContent = cpPaper + " " + pTie
+                }
+            }
              
-             
-             
-             
-             
-             
-             
-             
-             
-             playerInput.onchange = function() {
+            function pScissor() {
+                if (getCompChoice() == 0) {
+                    para.textContent = cpRock + " " + pLose
+                }
+                else if (getCompChoice() == 1) {
+                    para.textContent = cpScissors + " " + pTie
+                }
+                else {
+                    para.textContent = cpPaper + " " + pWin
+                }
+            } 
+            
+            playerInput.onchange = function() {
                 
                 const playerChoice = playerInput.value;
-                let exactChoice = playerChoice.toLowerCase()
+                let exactChoice = playerChoice.toLowerCase();
 
-                if (exactChoice == "rock"); {
+                if (exactChoice == "rock") {
+                    pRock()
+                }
+                else if (exactChoice == "paper") {
+                    pPaper()
+                }
+                else if (exactChoice == "scissor") {
+                    pScissor()
+                }
+                else {
+                    para.textContent = "Not a valid choice, please enter 'rock', 'paper' or 'scissors'."
+                }
+            }
 
                 
         </script>
