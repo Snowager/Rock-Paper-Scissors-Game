@@ -12,7 +12,7 @@
             let cRound = 0
             let choices = ["rock", "paper", "scissors"]
             
-            for (cRound = 0, pRound = 0; cRound < 3, pRound < 3;) {
+            for (cRound = 0, pRound = 0; cRound < 3 && pRound < 3;) {
                 
                 let playerChoice = prompt("Make your move!")
                 
@@ -53,7 +53,6 @@
                 if (cRound == 3) {
                     alert('Opponent wins, reload page to try again!')
                 }
-                else {}
 
                 if (pRound == 3) {
                     alert('You win! Congratulations!')
