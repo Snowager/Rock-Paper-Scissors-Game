@@ -44,6 +44,15 @@
                         roundLose()
                 }
                 else {}
+                
+                if (playerChoice.toLowerCase() == "rock" ||playerChoice.toLowerCase() ==  "paper" ||
+                playerChoice.toLowerCase() == "scissors") {
+                    alert("You threw " + playerChoice.toLowerCase() + "! Opponent threw " + cPick +
+                     "! Player's point total: " + pRound + ". Opponent's point total: " + cRound)
+                }
+                else {
+                    alert('Not a valid move! Please enter "rock, paper, or scissors".')
+                }
             }
             
         </script>
