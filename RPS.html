@@ -17,8 +17,16 @@
     </body>    
         <script>
             for (cRound = 0, pRound = 0; cRound < 3, pRound < 3;) {
+                
                 let playerChoice = prompt("Make your move!")
+                
+                function getCompChoice(choices) {
+                    return choices[Math.floor(Math.random() * choices.length)]
+                }
+ 
+                let cPick = getCompChoice(choices)
             }
+            
         </script>
     
     
