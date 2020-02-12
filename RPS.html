@@ -33,6 +33,17 @@
                 function roundLose() {
                     ++cRound
                 }
+
+                if ((playerChoice.toLowerCase() == "rock" && cPick == "scissors") ||
+                    (playerChoice.toLowerCase() == "paper" && cPick == "rock") ||
+                    (playerChoice.toLowerCase() == "scissors" && cPick == "paper")) {
+                        roundWin() }
+                else if ((playerChoice.toLowerCase() == "scissors" && cPick == "rock") ||
+                    (playerChoice.toLowerCase() == "rock" && cPick == "paper") ||
+                    (playerChoice.toLowerCase() == "paper" && cPick == "scissors")) {
+                        roundLose()
+                }
+                else {}
             }
             
         </script>
