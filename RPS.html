@@ -10,7 +10,8 @@
         <button id = btnRock>Throw Rock</button>
         <button id = btnPaper>Throw Paper</button>
         <button id = btnScissors>Throw Scissors</button>
-        <p id=round></p>
+        <h2 id = round></h2>
+        <p id = result></p>
     </body>    
         <script>
             let pRound = 0
@@ -20,11 +21,24 @@
             const btnRock = document.querySelector('#btnRock')
             const btnScissors = document.querySelector('#btnScissors')
             const gameRound = document.querySelector('#round')
-            
+            const gameResult = document.querySelector('#result')
+            const btn = document.querySelectorAll("button")
             function getCompChoice() {
                 return choices[Math.floor(Math.random() * choices.length)]
             }
             
+            function winGame() {
+                    result.textContent = "You win! Congratulations!"
+                    document.getElementById("btnScissors").style.display = "none"
+                    document.getElementById("btnPaper").style.display = "none"
+                    document.getElementById("btnRock").style.display = "none"
+            }
+            function loseGame() {
+                    result.textContent = "Aww, you lose! Try again next time!"
+                    document.getElementById("btnScissors").style.display = "none"
+                    document.getElementById("btnPaper").style.display = "none"
+                    document.getElementById("btnRock").style.display = "none"
+            }
             
             function roundWin() {        
                 ++pRound
@@ -38,41 +52,61 @@
                 cPick = getCompChoice()
                 if (cPick == "rock") {
                     roundWin();
+                    
                 }
                 else if (cPick == "scissors") {
                     roundLose();
+                    
                 }
                 gameRound.textContent = "You threw paper! Opponent threw " + cPick +
                      "! Player's point total: " + pRound + ". Opponent's point total: " + cRound
+                     endGame();
             }
 
             function rockRound() {
                 cPick = getCompChoice()
                 if (cPick == "scissors") {
                     roundWin();
+                   
+
                 }
                 else if (cPick == "paper") {
                     roundLose();
+                    
                 }
                 gameRound.textContent = "You threw rock! Opponent threw " + cPick +
                      "! Player's point total: " + pRound + ". Opponent's point total: " + cRound
+                     endGame()
             }
 
             function scissorsRound() {
                 cPick = getCompChoice()
                 if (cPick == "paper") {
                     roundWin();
+                    
                 }
                 else if (cPick == "rock") {
                     roundLose();
+                    
                 }
                 gameRound.textContent = "You threw scissors! Opponent threw " + cPick +
                      "! Player's point total: " + pRound + ". Opponent's point total: " + cRound
+                     endGame();
             }
 
+            function endGame() {
+                if (pRound == 3 ) {
+                  winGame()
+            } else if (cRound == 3) {
+                 loseGame()
+            } else {};
+            }
+            
             btnPaper.addEventListener('click', paperRound);
             btnRock.addEventListener('click', rockRound);
             btnScissors.addEventListener('click', scissorsRound);
+            
+            
 
         </script>
 
