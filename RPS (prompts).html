@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Rock Paper Scissors Game</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+    </body>    
+        <script>
+            let pRound = 0
+            let cRound = 0
+            let choices = ["rock", "paper", "scissors"]
+            
+            for (cRound = 0, pRound = 0; cRound < 3 && pRound < 3;) {
+                
+                let playerChoice = prompt("Make your move!")
+                
+                function getCompChoice(choices) {
+                    return choices[Math.floor(Math.random() * choices.length)]
+                }
+ 
+                let cPick = getCompChoice(choices)
+                
+                function roundWin() {        
+                    ++pRound
+                }
+            
+                function roundLose() {
+                    ++cRound
+                }
+
+                if ((playerChoice.toLowerCase() == "rock" && cPick == "scissors") ||
+                    (playerChoice.toLowerCase() == "paper" && cPick == "rock") ||
+                    (playerChoice.toLowerCase() == "scissors" && cPick == "paper")) {
+                        roundWin() }
+                else if ((playerChoice.toLowerCase() == "scissors" && cPick == "rock") ||
+                    (playerChoice.toLowerCase() == "rock" && cPick == "paper") ||
+                    (playerChoice.toLowerCase() == "paper" && cPick == "scissors")) {
+                        roundLose()
+                }
+                else {}
+                
+                if (playerChoice.toLowerCase() == "rock" ||playerChoice.toLowerCase() ==  "paper" ||
+                playerChoice.toLowerCase() == "scissors") {
+                    alert("You threw " + playerChoice.toLowerCase() + "! Opponent threw " + cPick +
+                     "! Player's point total: " + pRound + ". Opponent's point total: " + cRound)
+                }
+                else {
+                    alert('Not a valid move! Please enter "rock, paper, or scissors".')
+                }
+                
+                if (cRound == 3) {
+                    alert('Opponent wins, reload page to try again!')
+                }
+
+                if (pRound == 3) {
+                    alert('You win! Congratulations!')
+                }
+            }
+            
+        </script>
+    
+    
+    
+    
+    
+</html>
+
