@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    width: auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.playerChoices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#divRock {
+    display: flex;
+    flex-direction: column; 
+}
+
+#divPaper {
+    display: flex;
+    flex-direction: column; 
+}
+
+#divScissors {
+    display: flex;
+    flex-direction: column; 
+}
+
+.choiceIndicator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#playerChoiceIndicator {
+    height: 600px;
+    width: 300px;
+}
+
+#computerChoiceIndicator {
+    height: 600px;
+    width: 300px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
